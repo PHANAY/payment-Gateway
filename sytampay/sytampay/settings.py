@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'sytampay.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'sytampay',
+        'USER':'postgres',
+        'PASSWORD': 'phanayp1421',
+        'HOST':'localhost',
+        'PORT':'5432',
     }
 }
 
@@ -122,10 +126,20 @@ STATIC_URL = 'static/'
 
 
 
-LOGIN_REDIRECT_URL= 'dashboard'
-LOGIN_URL= 'login'
+#LOGIN_REDIRECT_URL= 'dashboard'
+#LOGIN_URL= 'login'
 LOGOUT_URL= 'logout'
 
+STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
+
+
+#smtp configuration
+EMAIL_BACKEND= 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST= 'smtp.gmail.com'
+EMAIL_PORT= 587
+EMAIL_USE_TLS= True
+EMAIL_HOST_USER= ''
+EMAIL_HOST_PASSWORD= ' '
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
