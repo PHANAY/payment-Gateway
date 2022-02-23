@@ -2,5 +2,5 @@
 
 {% block content %}
  <h1>Dashboard</h1>
- <p>Welcome {{owner.username}}your balance is {{account_details.balance}}</p>
+ <p>Welcome {{request.user.email}}your balance is {{account_details.balance}}</p>
 {% endblock %}
